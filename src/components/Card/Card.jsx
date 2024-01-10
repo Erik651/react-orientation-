@@ -4,8 +4,11 @@
 import { useState } from 'react';
 
 
-function Card() {
+function Card({ globalName }) {
   const [myName, setMyName] = useState('Myron');
+
+//props.globalName
+
 
   function clickChangeName() {
     //set name to new name
@@ -15,7 +18,8 @@ function Card() {
     return (
         <div className="card">
         <button>count is 0</button>
-        <p>{myName}</p>
+        <p>{globalName ? globalName : myName}</p> 
+        
         <button onClick={clickChangeName}>Change Name</button>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR

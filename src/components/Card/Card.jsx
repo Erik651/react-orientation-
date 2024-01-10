@@ -6,8 +6,17 @@ import { useState } from 'react';
 
 function Card({ globalName }) {
   const [myName, setMyName] = useState('Myron');
+  const [addNumber, setAddedNumber] = useState(0)
 
 //props.globalName
+
+  function clickAddNumber(){
+    //add number to counter
+    console.log('Number Added');
+    setAddedNumber(addNumber + 1);
+
+
+  }
 
 
   function clickChangeName() {
@@ -17,7 +26,7 @@ function Card({ globalName }) {
   }
     return (
         <div className="card">
-        <button>count is 0</button>
+        <button onClick={clickAddNumber}>You pressed me {addNumber} times</button>
         <p>{globalName ? globalName : myName}</p> 
         
         <button onClick={clickChangeName}>Change Name</button>
